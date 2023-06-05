@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Company Product sales Dashboard" icon-name="utility:chart">
+        <div>
+            <div>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item class ="slds-size_4-of-12" padding="around-small" >
+                        <lightning-combobox
+                        name="Grapg"
+                        label="Select Graph"
+                        value={graphType}
+                        placeholder="Select Progress"
+                        options={options}
+                        onchange={handleChange} ></lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item class ="slds-p-top_x-large slds-size_8-of-12">
+                        <template if:true ={isBackButton}>
+                            <div class="slds-float_right slds-p-right_x-large slds-p-buttom_medium ">
+                            <lightning-button variant="brand" label="Back" title="Go to Back" onclick={handleClickBack} class="slds-m-left_x-small"></lightning-button>
+                        </div>
+                    </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+               
+            </div>
+            <canvas class="barChart" onclick={drilldownHandller} ></canvas>
+          </div>
+    </lightning-card>
+</template>
